@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Salary</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in ViewBag.Employees)
+            {
+            <tr>
+                <td>@item.FName</td>
+                <td>@item.LName</td>
+                <td>@item.Salary</td>
+                <td>@item.CreatedOn</td>
+            </tr>
+            }
+
+        </tbody>
+</table>

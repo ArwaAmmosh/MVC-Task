@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Company.PLL</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+    <!-- jQuery (يجب تحميله قبل أي شيء آخر) -->
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/css/jquery.dataTables.min.css" />
+    <script src="~/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+
+    <partial name="~/Views/Shared/_Header.cshtml" />
+
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <partial name="~/Views/Shared/_Footer.cshtml" />
+
+    <!-- تهيئة DataTables -->
+    <script>
+        $(document).ready(function () {
+            console.log("jQuery Version:", $.fn.jquery);  // اختبري هل jQuery محملة
+            console.log("DataTables Loaded:", typeof $.fn.DataTable);  // اختبري هل DataTables محملة
+
+            $('#myTable').DataTable();
+        });
+    </script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- باقي السكربتات -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
