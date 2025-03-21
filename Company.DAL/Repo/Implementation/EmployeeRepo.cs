@@ -1,11 +1,12 @@
 ﻿using Company.DAL.DataBase;
+
 namespace Company.DAL.Repo.Implementation
 {
     public class EmployeeRepo : IEmployeeRepo
     {
         private static readonly ApplicationDBContext _dbContext = new();
 
-        public bool Add(Employee employee)
+        public bool Add(Employee employee) 
         {
             try
             {
@@ -49,17 +50,19 @@ namespace Company.DAL.Repo.Implementation
 
         public Employee? GetById(long Id)
         {
-            return _dbContext.Employees.FirstOrDefault(a => a.Id == Id);
+            var emp = _dbContext.Employees.FirstOrDefault(a => a.Id == Id);
+            if (emp == null) return null;
+            return emp;
         }
 
-        public bool Update(Employee employee, string EditBy)
+        public bool Update(long id, string updatedBy, string fname, string lname, int age, double salary)
         {
             try
             {
-                var emp = _dbContext.Employees.Where(a => a.Id == employee.Id).FirstOrDefault();
-                if (employee == null)
+                var emp = _dbContext.Employees.Where(a => a.Id == id).FirstOrDefault();
+                if (emp == null)
                     return false;
-                var result = emp.Edit(EditBy, employee.FName, employee.LName, employee.Age, employee.Salary);
+                var result = emp.Edit(updatedBy, fname, lname, age, salary);
                 if (result)
                 {
                     _dbContext.SaveChanges();

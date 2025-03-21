@@ -6,7 +6,7 @@ namespace Company.DAL.Repo.Abstraction
     {
         Employee? GetById(long Id);
         bool Add(Employee employee);
-        bool Update(Employee employee, string EditBy);
+        bool Update(long id, string updatedBy, string fname, string lname, int age, double salary);
         bool Delete(long Id, string DeletedBy);
         List<Employee> GetAll();   
 

@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="logincontainer">
+    <div id="closelogin" class="fas fa-times">
+        <form asp-action="Delete" asp-controller="Employee" method="post">
+            <h3>Delete Employee:</h3>
+            @if (ViewBag.Massege != null)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        @ViewBag.Massege
+                    </div>
+                </div>
+            }
+            <label>First Name:</label>
+
+            <input type="text" class="box" value="@ViewBag.Employee.FName" readonly />
+
+            <label>Last Name:</label>
+
+            <input type="text" class="box"  value="@ViewBag.Employee.LName" readonly />
+
+            <label>Age:</label>
+
+            <input type="number" class="box" value="@ViewBag.Employee.Age" readonly />
+
+            <label>Deleted By:</label>
+
+            <input type="text" class="box" placeholder="Enter Name......." name="deletedBy" />
+            
+
+            <input type="submit" value="Delete Employee" class="btn">
+
+        </form>
+    </div>
+</div>

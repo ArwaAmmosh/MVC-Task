@@ -121,12 +121,21 @@ html {
     }
 
     .heading span {
-        font-size: 3rem;
+        font-size: 1.5rem;
         padding: .5rem 2rem;
         color: var(--black);
         background: rgb(255, 255, 255);
         border: var(--border);
     }
+.card{
+    width:100%;
+    margin:auto;
+    font-size:1.5rem;
+}
+.card img 
+{
+    height:150px;
+}
 
 .header .header-1 {
     background: rgb(255, 255, 255);
@@ -202,13 +211,14 @@ html {
 
     .header .header-2 .navbar {
         text-align: center;
+        justify-content:center;
     }
 
         .header .header-2 .navbar a {
             color: rgb(255, 255, 255);
             display: inline;
-            padding: 1.2rem;
-            font-size: 1.7rem;
+            padding: 1rem;
+            font-size: 1.5rem;
             margin:0;
        
         }
@@ -231,9 +241,10 @@ html {
 }
 
     .bottomnavbar a {
-        font-size: 2.5rem;
-        padding: 2rem;
+        font-size: 2rem;
+        padding: 1.5rem;
         color: rgb(255, 255, 255);
+        text-align:center;
     }
 
         .bottomnavbar a:hover {
@@ -260,15 +271,16 @@ html {
         background: rgb(255, 255, 255);
         border: var(--border);
         width: 65rem;
-        padding: 2rem;
+        padding: 1.5rem;
         box-shadow: var(--box-shadow);
         border-radius: .5rem;
         margin: auto;
-        height:70rem;
+        font:bold;
+        align-self:center;
+        height:74rem;
     }
 
         .logincontainer form h3 {
-            padding-bottom: 1rem;
             font-size: 2.5rem;
             text-transform: uppercase;
             color: var(--black);
@@ -277,19 +289,22 @@ html {
 
         .logincontainer form label {
             display: block;
-            font-size: 1.5rem;
-            padding-top: 1rem;
+            font-size: 1.6rem;
+            padding-top: .3rem;
+
         }
 
         .logincontainer form .box {
             border: var(--border);
             width: 100%;
             border-radius: .5rem;
-            margin: .7rem;
-            font-size: 1.6rem;
-            padding: 1rem 1.2rem;
+            font-size: 1.7rem;
+            padding-top: 1.2rem;
+            padding-bottom: .8rem;
+            padding-left: .5rem;
             color: var(--black);
             text-transform: none;
+            margin: 0px;
         }
 
         .logincontainer form .chechboxcon {

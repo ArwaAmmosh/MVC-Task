@@ -3,26 +3,43 @@
 *@
 @{
 }
+@model CreateEmployee
 <div class="logincontainer">
     <div id="closelogin" class="fas fa-times">
-        <form action="Index" method="post">
+        <form asp-action="Create" asp-controller="Employee" enctype="multipart/form-data" method="post">
+
         <h3>Add Employee:</h3>
+            @if (ViewBag.Massege != null)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        @ViewBag.Massege
+                    </div>
+                </div>
+            }
 
         <label>First Name:</label>
 
-        <input type="text" class="box" placeholder="enter First Name ..." id="">
+        <input type="text" class="box" placeholder="enter First Name ..." asp-for="FName">
 
         <label>Last Name:</label>
 
-        <input type="text" class="box" placeholder="enter Last Name ..." id="">
+        <input type="text" class="box" placeholder="enter Last Name ..."  asp-for="LName">
 
         <label>Salary:</label>
 
-        <input type="number" class="box" placeholder="enter Salary ..." id="">
+        <input type="number" class="box" placeholder="enter Salary ..." asp-for="Salary">
+        
+        <label>Age:</label>
+
+        <input type="number" class="box" placeholder="enter Age ..." asp-for="Age" />
+
+        <label>Personnal Photo</label>
+        <input type="file" class="box" asp-for="Image" placeholder="Upload Image...." />
 
         <label>Created By:</label>
 
-        <input type="text" class="box" placeholder="enter your Name ..." id="">
+        <input type="text" class="box" placeholder="enter your Name ..." asp-for="CreatedBy">
    
         <input type="submit" value="Add Employee" class="btn">
 

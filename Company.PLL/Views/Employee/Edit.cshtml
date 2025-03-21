@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EditEmployee
+<div class="logincontainer">
+    <div id="closelogin" class="fas fa-times">
+        <form asp-action="Edit" asp-controller="Employee" method="post">
+            <h3>Edit Employee:</h3>
+            @if (ViewBag.Massege != null)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        @ViewBag.Massege
+                    </div>
+                </div>
+            }
+            <label>First Name:</label>
+
+            <input type="text" class="box" placeholder="enter First Name ..." asp-for="FName">
+
+            <label>Last Name:</label>
+
+            <input type="text" class="box" placeholder="enter Last Name ..." asp-for="LName">
+
+            <label>Salary:</label>
+
+            <input type="number" class="box" placeholder="enter Salary ..." asp-for="Salary">
+
+            <label>Age:</label>
+
+            <input type="number" class="box" placeholder="enter Age ..." asp-for="Age" />
+
+            <label>Mdified By:</label>
+
+            <input type="text" class="box" placeholder="enter your Name ..." asp-for="ModifiedBy">
+
+            <input type="submit" value="Edit Employee" class="btn">
+
+        </form>
+    </div>
+</div>

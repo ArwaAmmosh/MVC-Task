@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Company.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20250310190642_CreateEmployeeTable")]
-    partial class CreateEmployeeTable
+    [Migration("20250320000930_CreateTables")]
+    partial class CreateTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,10 +46,14 @@ namespace Company.DAL.Migrations
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DeletedOn")
+                    b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Imagepath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

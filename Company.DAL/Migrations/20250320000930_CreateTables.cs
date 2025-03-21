@@ -3,7 +3,7 @@
 namespace Company.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateEmployeeTable : Migration
+    public partial class CreateTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,12 +19,13 @@ namespace Company.DAL.Migrations
                     Age = table.Column<int>(type: "int", nullable: false),
                     Salary = table.Column<double>(type: "float", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    Imagepath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {

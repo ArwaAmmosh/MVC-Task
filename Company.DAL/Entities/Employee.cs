@@ -8,13 +8,13 @@
         public int Age { get; private set; } = age;
         public double Salary { get; private set; } = salary;
         public bool IsDeleted { get; private set; } = false;
+        public required string Imagepath { get;  set; }
         public string CreatedBy { get; private set; } = createdBy;
         public DateTime CreatedOn { get; private set; } = DateTime.Now;
         public string? ModifiedBy { get; private set; }
         public DateTime? ModifiedOn { get; private set; }
         public string? DeletedBy { get; private set; }
         public DateTime? DeletedOn { get; private set; }
-
 
         public bool Edit(string? User, string fname, string lname, int age, double salary)
         {

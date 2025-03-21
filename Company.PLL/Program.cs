@@ -8,6 +8,9 @@ namespace Company.PLL
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //Depencey injection
+            builder.Services.AddScoped<IEmeployeeServices,EmeployeeServices>();
+            builder.Services.AddScoped<IEmployeeRepo,EmployeeRepo>();
 
             var app = builder.Build();
 

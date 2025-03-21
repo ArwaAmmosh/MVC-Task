@@ -2,3 +2,4 @@
 global using Company.DAL.Entities;
 global using Microsoft.EntityFrameworkCore.Migrations;
 global using Company.DAL.Repo.Abstraction;
+global using Company.DAL.DataBase;

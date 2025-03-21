@@ -2,10 +2,10 @@
 {
     public interface IEmeployeeServices
     {
-        List<Employee> GetAllEmployee();
-        bool Add(Employee employee);
-        bool Update (Employee employee, string EditBy);
+        List<DisplayEmployee> GetAllEmployee();
+        bool Add(CreateEmployee employee);
+        bool Update (long id, EditEmployee employee);
         bool Delete(long Id, string DeletedBy);
-        Employee GetById(long Id);
+        DisplayEmployee? GetById(long Id);
     }
 }
